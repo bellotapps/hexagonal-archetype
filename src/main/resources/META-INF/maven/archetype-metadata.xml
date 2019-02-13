@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor
+        name="hexagonal-archetype"
+        xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0
+                            http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+        xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <requiredProperties>
+        <requiredProperty key="version">
+            <defaultValue>0.0.1-SNAPSHOT</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="package">
+            <defaultValue>${groupId.replaceAll("-", "_")}.${artifactId.replaceAll("-", "_")}</defaultValue>
+        </requiredProperty>
+    </requiredProperties>
+
+    <fileSets>
+        <!-- Configuration, README, gitignore, LICENSE-->
+        <fileSet encoding="UTF-8" filtered="true">
+            <directory/>
+            <includes>
+                <include>.travis.yml</include>
+                <include>README.md</include>
+                <include>.gitignore</include>
+                <include>LICENSE</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+
+    <modules>
+        <module id="${rootArtifactId}-application" dir="__rootArtifactId__-application"
+                name="${rootArtifactId}-application">
+            <fileSets>
+                <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                    <directory>src/main/java</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>**/*.yml</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                    <directory>/src/test/java</directory>
+                    <excludes>
+                        <exclude>**/*.gitkeep</exclude>
+                    </excludes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>/src/test/resources</directory>
+                    <excludes>
+                        <exclude>**/*.gitkeep</exclude>
+                    </excludes>
+                </fileSet>
+            </fileSets>
+        </module>
+        <module id="${rootArtifactId}-core" dir="__rootArtifactId__-core" name="${rootArtifactId}-core">
+            <modules>
+                <module id="${rootArtifactId}-domain" dir="__rootArtifactId__-domain" name="${rootArtifactId}-domain">
+                    <fileSets>
+                        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                            <directory>src/main/java</directory>
+                            <includes>
+                                <include>**/*.java</include>
+                            </includes>
+                        </fileSet>
+                        <fileSet filtered="true" encoding="UTF-8">
+                            <directory>src/main/resources</directory>
+                            <excludes>
+                                <exclude>**/*.gitkeep</exclude>
+                            </excludes>
+                        </fileSet>
+                        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                            <directory>/src/test/java</directory>
+                            <excludes>
+                                <exclude>**/*.gitkeep</exclude>
+                            </excludes>
+                        </fileSet>
+                        <fileSet filtered="true" encoding="UTF-8">
+                            <directory>/src/test/resources</directory>
+                            <excludes>
+                                <exclude>**/*.gitkeep</exclude>
+                            </excludes>
+                        </fileSet>
+                    </fileSets>
+                </module>
+                <module id="${rootArtifactId}-models" dir="__rootArtifactId__-models" name="${rootArtifactId}-models">
+                    <fileSets>
+                        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                            <directory>src/main/java</directory>
+                            <includes>
+                                <include>**/*.java</include>
+                            </includes>
+                        </fileSet>
+                        <fileSet filtered="true" encoding="UTF-8">
+                            <directory>src/main/resources</directory>
+                            <excludes>
+                                <exclude>**/*.gitkeep</exclude>
+                            </excludes>
+                        </fileSet>
+                        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                            <directory>/src/test/java</directory>
+                            <excludes>
+                                <exclude>**/*.gitkeep</exclude>
+                            </excludes>
+                        </fileSet>
+                        <fileSet filtered="true" encoding="UTF-8">
+                            <directory>/src/test/resources</directory>
+                            <excludes>
+                                <exclude>**/*.gitkeep</exclude>
+                            </excludes>
+                        </fileSet>
+                    </fileSets>
+                </module>
+                <module id="${rootArtifactId}-ports" dir="__rootArtifactId__-ports" name="${rootArtifactId}-ports">
+                    <modules>
+                        <module id="${rootArtifactId}-services" dir="__rootArtifactId__-services"
+                                name="${rootArtifactId}-services">
+                            <fileSets>
+                                <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                                    <directory>src/main/java</directory>
+                                    <includes>
+                                        <include>**/*.java</include>
+                                    </includes>
+                                </fileSet>
+                                <fileSet filtered="true" encoding="UTF-8">
+                                    <directory>src/main/resources</directory>
+                                    <excludes>
+                                        <exclude>**/*.gitkeep</exclude>
+                                    </excludes>
+                                </fileSet>
+                                <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                                    <directory>/src/test/java</directory>
+                                    <excludes>
+                                        <exclude>**/*.gitkeep</exclude>
+                                    </excludes>
+                                </fileSet>
+                                <fileSet filtered="true" encoding="UTF-8">
+                                    <directory>/src/test/resources</directory>
+                                    <excludes>
+                                        <exclude>**/*.gitkeep</exclude>
+                                    </excludes>
+                                </fileSet>
+                            </fileSets>
+                        </module>
+                        <module id="${rootArtifactId}-repositories" dir="__rootArtifactId__-repositories"
+                                name="${rootArtifactId}-repositories">
+                            <fileSets>
+                                <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                                    <directory>src/main/java</directory>
+                                    <includes>
+                                        <include>**/*.java</include>
+                                    </includes>
+                                </fileSet>
+                                <fileSet filtered="true" encoding="UTF-8">
+                                    <directory>src/main/resources</directory>
+                                    <excludes>
+                                        <exclude>**/*.gitkeep</exclude>
+                                    </excludes>
+                                </fileSet>
+                                <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                                    <directory>/src/test/java</directory>
+                                    <excludes>
+                                        <exclude>**/*.gitkeep</exclude>
+                                    </excludes>
+                                </fileSet>
+                                <fileSet filtered="true" encoding="UTF-8">
+                                    <directory>/src/test/resources</directory>
+                                    <excludes>
+                                        <exclude>**/*.gitkeep</exclude>
+                                    </excludes>
+                                </fileSet>
+                            </fileSets>
+                        </module>
+                    </modules>
+                </module>
+            </modules>
+        </module>
+        <module id="${rootArtifactId}-adapters" dir="__rootArtifactId__-adapters" name="${rootArtifactId}-adapters">
+            <modules>
+                <module id="${rootArtifactId}-rest-adapter" dir="__rootArtifactId__-rest-adapter"
+                        name="${rootArtifactId}-rest-adapter">
+                    <fileSets>
+                        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                            <directory>src/main/java</directory>
+                            <includes>
+                                <include>**/*.java</include>
+                            </includes>
+                        </fileSet>
+                        <fileSet filtered="true" encoding="UTF-8">
+                            <directory>src/main/resources</directory>
+                            <excludes>
+                                <exclude>**/*.gitkeep</exclude>
+                            </excludes>
+                        </fileSet>
+                        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                            <directory>/src/test/java</directory>
+                            <excludes>
+                                <exclude>**/*.gitkeep</exclude>
+                            </excludes>
+                        </fileSet>
+                        <fileSet filtered="true" encoding="UTF-8">
+                            <directory>/src/test/resources</directory>
+                            <excludes>
+                                <exclude>**/*.gitkeep</exclude>
+                            </excludes>
+                        </fileSet>
+                    </fileSets>
+                </module>
+                <module id="${rootArtifactId}-spring-data-adapter" dir="__rootArtifactId__-spring-data-adapter"
+                        name="${rootArtifactId}-spring-data-adapter">
+                    <fileSets>
+                        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                            <directory>src/main/java</directory>
+                            <includes>
+                                <include>**/*.java</include>
+                            </includes>
+                        </fileSet>
+                        <fileSet filtered="true" encoding="UTF-8">
+                            <directory>src/main/resources</directory>
+                            <excludes>
+                                <exclude>**/*.gitkeep</exclude>
+                            </excludes>
+                        </fileSet>
+                        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                            <directory>/src/test/java</directory>
+                            <excludes>
+                                <exclude>**/*.gitkeep</exclude>
+                            </excludes>
+                        </fileSet>
+                        <fileSet filtered="true" encoding="UTF-8">
+                            <directory>/src/test/resources</directory>
+                            <excludes>
+                                <exclude>**/*.gitkeep</exclude>
+                            </excludes>
+                        </fileSet>
+                    </fileSets>
+                </module>
+            </modules>
+        </module>
+    </modules>
+</archetype-descriptor>

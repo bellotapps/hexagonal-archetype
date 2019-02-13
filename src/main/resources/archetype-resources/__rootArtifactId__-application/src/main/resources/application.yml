@@ -1,0 +1,31 @@
+# Default Configuration
+
+spring:
+    profiles:
+        active: dev
+
+    main:
+        banner-mode: "off"
+
+---
+# Configuration for Development Environment
+
+spring:
+    profiles:
+        - dev
+        - development
+
+---
+# Configuration for Staging Environment
+
+spring:
+    profiles:
+        - staging
+
+---
+# Configuration for Production Environment
+
+spring:
+    profiles:
+        - prod
+        - production

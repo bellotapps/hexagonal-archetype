@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.bellotapps.archetypes</groupId>
+    <artifactId>hexagonal-archetype</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>maven-archetype</packaging>
+
+    <name>hexagonal-archetype</name>
+    <description>A Maven archetype that structures an application using the Hexagonal Architecture.</description>
+    <url>https://hexagonal-archetype.bellotapps.com</url>
+
+    <properties>
+        <!-- Build -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Plugins -->
+        <archetype-packaging.version>3.0.1</archetype-packaging.version>
+    </properties>
+
+
+    <build>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.archetype</groupId>
+                <artifactId>archetype-packaging</artifactId>
+                <version>${archetype-packaging.version}</version>
+            </extension>
+        </extensions>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-archetype-plugin</artifactId>
+                    <version>${archetype-packaging.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <developers>
+        <developer>
+            <name>Juan Marcos Bellini</name>
+            <email>jbellini@bellotapps.com</email>
+            <organization>BellotApps</organization>
+            <organizationUrl>https://bellotapps.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git://github.com/bellotapps/hexagonal-example.git</connection>
+        <developerConnection>scm:git:ssh://github.com:bellotapps/hexagonal-example.git</developerConnection>
+        <url>http://github.com/bellotapps/hexagonal-example/tree/master</url>
+    </scm>
+</project>

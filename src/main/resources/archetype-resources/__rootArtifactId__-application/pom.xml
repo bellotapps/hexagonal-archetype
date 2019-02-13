@@ -1,0 +1,71 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>${groupId}</groupId>
+        <artifactId>${rootArtifactId}</artifactId>
+        <version>${version}</version>
+    </parent>
+
+    <artifactId>${rootArtifactId}-application</artifactId>
+    <name>${symbol_dollar}{project.groupId}:${symbol_dollar}{project.artifactId}</name>
+    <packaging>jar</packaging>
+
+    <properties>
+        <!-- Encoding -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Bootstrap class -->
+        <bootstrapClass>${package}.application.Application</bootstrapClass>
+    </properties>
+
+    <dependencies>
+        <!-- Core -->
+        <dependency>
+            <groupId>${symbol_dollar}{project.parent.groupId}</groupId>
+            <artifactId>${rootArtifactId}-domain</artifactId>
+            <version>${version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Adapters -->
+        <dependency>
+            <groupId>${symbol_dollar}{project.parent.groupId}</groupId>
+            <artifactId>${rootArtifactId}-spring-data-adapter</artifactId>
+            <version>${version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>${symbol_dollar}{project.parent.groupId}</groupId>
+            <artifactId>${rootArtifactId}-rest-adapter</artifactId>
+            <version>${version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Third party libraries -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>${symbol_dollar}{bootstrapClass}</mainClass>
+                    <layout>JAR</layout>
+                    <executable>true</executable>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
