@@ -33,7 +33,7 @@
         <!-- Repositories definitions -->
         <dependency>
             <groupId>com.bellotapps.webapps</groupId>
-            <artifactId>webapps-commons-repositories</artifactId>
+            <artifactId>webapps-commons-repository-utils</artifactId>
         </dependency>
     </dependencies>
 </project>
