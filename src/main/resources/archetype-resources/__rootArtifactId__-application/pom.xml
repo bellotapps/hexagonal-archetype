@@ -30,7 +30,7 @@
         <dependency>
             <groupId>${symbol_dollar}{project.parent.groupId}</groupId>
             <artifactId>${rootArtifactId}-domain</artifactId>
-            <version>${version}</version>
+            <version>${symbol_dollar}{project.parent.version}</version>
             <scope>runtime</scope>
         </dependency>
 
@@ -38,13 +38,13 @@
         <dependency>
             <groupId>${symbol_dollar}{project.parent.groupId}</groupId>
             <artifactId>${rootArtifactId}-spring-data-adapter</artifactId>
-            <version>${version}</version>
+            <version>${symbol_dollar}{project.parent.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>${symbol_dollar}{project.parent.groupId}</groupId>
             <artifactId>${rootArtifactId}-rest-adapter</artifactId>
-            <version>${version}</version>
+            <version>${symbol_dollar}{project.parent.version}</version>
             <scope>runtime</scope>
         </dependency>
 

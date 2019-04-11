@@ -26,14 +26,7 @@
         <dependency>
             <groupId>${symbol_dollar}{project.parent.groupId}</groupId>
             <artifactId>${rootArtifactId}-models</artifactId>
-            <version>${version}</version>
-        </dependency>
-
-        <!-- Third party libraries -->
-        <!-- Repositories definitions -->
-        <dependency>
-            <groupId>com.bellotapps.webapps</groupId>
-            <artifactId>webapps-commons-repository-utils</artifactId>
+            <version>${symbol_dollar}{project.parent.version}</version>
         </dependency>
     </dependencies>
 </project>

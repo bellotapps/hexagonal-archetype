@@ -26,19 +26,19 @@
         <dependency>
             <groupId>${symbol_dollar}{project.parent.groupId}</groupId>
             <artifactId>${rootArtifactId}-models</artifactId>
-            <version>${version}</version>
+            <version>${symbol_dollar}{project.parent.version}</version>
         </dependency>
 
         <!-- Ports -->
         <dependency>
             <groupId>${symbol_dollar}{project.parent.groupId}</groupId>
             <artifactId>${rootArtifactId}-repositories</artifactId>
-            <version>${version}</version>
+            <version>${symbol_dollar}{project.parent.version}</version>
         </dependency>
         <dependency>
             <groupId>${symbol_dollar}{project.parent.groupId}</groupId>
             <artifactId>${rootArtifactId}-services</artifactId>
-            <version>${version}</version>
+            <version>${symbol_dollar}{project.parent.version}</version>
         </dependency>
 
         <!-- Third party libraries-->
